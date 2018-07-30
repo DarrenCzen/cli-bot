@@ -1,0 +1,977 @@
+<!DOCTYPE HTML>
+<style>
+    body {
+        background-color: black;
+    }
+    @font-face { font-family: Montserrat; src: url('imagefiles/Montserrat-Regular.TTF')}
+    
+    .button {
+        outline: none;
+        cursor: pointer;
+        border: none;
+    }
+
+    #proxies {
+        font-family: Montserrat;
+        color: white;
+        font-size: 26px;
+        font-weight: lighter;
+        position: absolute;
+        left: 110px;
+        top: 45px;
+    }
+    #proxiesimg {
+        position: fixed;
+        left: 215px;
+        top: 52.5px;
+        height: auto;
+        width: 30px;
+    }
+    
+    .proxysave textarea {
+        position: fixed;
+        overflow: hidden;
+        left: 60px;
+        top: 95px;
+        width: 18%;
+        height: 400px;
+        outline: none;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+        border-radius: 8px;
+        overflow-y:scroll;
+        font-family: Montserrat
+    }
+
+
+    .proxysave input {
+        position: fixed;
+        left: 150px;
+        top: 510px;
+        height: auto;
+        width: 45px;
+        height: 40px;
+    }
+
+    .proxysave button {
+        position: fixed;
+        left: 165px;
+        top: 515px;
+        background-size: cover;
+        border: 18px solid white;
+        border-radius: 8px;
+
+    }
+
+    /*
+    .proxysave button:active {
+        background-color: white;
+        border-image: "save.svg";
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        }
+    */
+    #settings {
+        font-family: Montserrat;
+        color: white;
+        font-size: 26px;
+        font-weight: lighter;
+        position: fixed;
+        left: 430px;
+        top: 45px;
+    }
+    #settingsimg {
+        position: fixed;
+        left: 540px;
+        top: 50px;
+        height: 28px;
+        width: 28px;
+    }
+
+    #key { 
+        position: absolute;
+        left: 420px;
+        top:220px;
+        width: 13%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #email { 
+        position: absolute;
+        left: 420px;
+        top:265px;
+        width: 13%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #domain { 
+        position: absolute;
+        left: 420px;
+        top:310px;
+        width: 13%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #capapi { 
+        position: absolute;
+        left: 420px;
+        top:355px;
+        width: 13%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #webhook { 
+        position: absolute;
+        left: 420px;
+        top:400px;
+        width: 13%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #size {
+        position: absolute;
+        left: 420px;
+        top:445px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #delay {
+        position: absolute;
+        left: 420px;
+        top:490px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #entry {
+        position: fixed;
+        left: 420px;
+        top:535px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+
+    #info {
+        font-family: Montserrat;
+        color: white;
+        font-size: 26px;
+        font-weight: lighter;
+        position: fixed;
+        left: 740px;
+        top: 45px;
+    }
+    #infoimg {
+        position: fixed;
+        left: 800px;
+        top: 52.5px;
+    }
+    #fname {
+        position: fixed;
+        left: 720px;
+        top:95px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #lname {
+        position: fixed;
+        left: 720px;
+        top:130px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #address {
+        position: fixed;
+        left: 720px;
+        top:165px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #address2 {
+        position: fixed;
+        left: 720px;
+        top:200px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #apt {
+        position: fixed;
+        left: 720px;
+        top:235px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #city {
+        position: fixed;
+        left: 720px;
+        top:270px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #state {
+        position: fixed;
+        left: 720px;
+        top:305px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #country {
+        position: fixed;
+        left: 720px;
+        top:340px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #zipcode {
+        position: fixed;
+        left: 720px;
+        top:375px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #phone {
+        position: fixed;
+        left: 720px;
+        top:410px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #birthday {
+        position: fixed;
+        left: 720px;
+        top:445px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #ccnumber {
+        position: fixed;
+        left: 720px;
+        top:480px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #ccmonth {
+        position: fixed;
+        left: 720px;
+        top:515px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #ccyear {
+        position: fixed;
+        left: 720px;
+        top:550px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+    #cvv { 
+        position: fixed;
+        left: 720px;
+        top:585px;
+        width: 10.5%;
+        background-color: transparent;
+        padding: 5px 5px;
+        border: 0px;
+        border-bottom: 1px solid lightgray;
+        outline-width: 0;
+        font-family: montserrat;
+        font-size: 12px;
+        color: white;
+    }
+   
+    ::placeholder {
+        color: lightgray;
+        font-family: montserrat;
+        font-size: 12px;
+    }
+    
+    
+    #faq {
+        background-color: white;
+        font-family: montserrat;
+        font-size: 16px;
+        border-radius: 10px;
+        position: fixed;
+        left: 1000px;
+        top: 150px;
+        width: 200px;
+        height: 50px;
+    }
+    #dependencies {
+        background-color: white;
+        font-family: montserrat;
+        font-size: 16px;
+        border-radius: 10px;
+        position: fixed;
+        left: 1000px;
+        top: 207px;
+        width: 200px;
+        height: 50px;
+
+    }
+    #saveAll {
+        background-color: white;
+        font-family: montserrat;
+        font-size: 16px;
+        border-radius: 10px;
+        position: fixed;
+        left: 1000px;
+        top: 267px;
+        width: 200px;
+        height: 50px;
+
+    }
+    #run {
+        background-color: white;
+        font-family: montserrat;
+        font-size: 16px;
+        border-radius: 10px;
+        position: fixed;
+        left: 1000px;
+        top: 327px;
+        width: 200px;
+        height: 50px;
+
+    }
+    #download {
+        background-color: white;
+        font-family: montserrat;
+        font-size: 16px;
+        border-radius: 10px;
+        position: fixed;
+        left: 1000px;
+        top: 387px;
+        width: 200px;
+        height: 50px;
+
+    }
+    #loadInfo {
+        background-color: white;
+        font-family: montserrat;
+        font-size: 16px;
+        border-radius: 10px;
+        position: fixed;
+        left: 1000px;
+        top: 447px;
+        width: 200px;
+        height: 50px;
+
+    }
+    #logo {
+        position: fixed;
+        left: 1000px;
+        top: 10px;
+        height: 200px;
+        width: 200px;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 12px;
+        pointer-events: none;
+    }
+   
+    #version {
+        position: fixed;
+        right: 7px;
+        bottom: 5px;
+        font-family: montserrat;
+        font-size: 14px;
+        color: lightgray;
+        font-weight: lighter;
+    }
+    
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        font-family: montserrat;
+        font-style: bold;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: black;
+        font-family: montserrat;
+        font-style: bold;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 25%;
+        height: 25%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0} 
+        to {top:0; opacity:1}
+    }
+
+    @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+    }
+
+    .modal-header {
+        padding: 2px 16px;
+        background-color:#329932;
+        color: white;
+        font-family: montserrat;
+    }
+
+    .modal-body {padding: 2px 16px;}
+
+    #enableproxyLabel {
+        font-family: montserrat;
+        color: white;
+        font-size: 16px;
+        font-weight: lighter;
+        position: fixed;
+        left: 425px;
+        top: 97px;     
+    }
+
+    #enablerandomnameLabel {
+        font-family: montserrat;
+        color: white;
+        font-size: 16px;
+        font-weight: lighter;
+        position: fixed;
+        left: 425px;
+        top: 132px;   
+    }
+    #enablejigaddyLabel {
+        font-family: Montserrat;
+        color: white;
+        font-size: 16px;
+        font-weight: lighter;
+        position: fixed;
+        left: 425px;
+        top: 170px;   
+    }
+
+    h2 {
+        font-family: Montserrat;
+        color: black;
+        font-weight: lighter;
+        font-size: 16px;
+    }
+    #proxySaveBtn {
+        position: fixed;
+        left: 150px;
+        top: 510px;
+        border: none;
+        height: auto;
+        border-radius: 10px;
+        background-color: white;
+        width: 48px;
+        height: 40px;
+    }
+    #proxySaveImg {
+        position: fixed;
+        left: 157px;
+        top: 515px;
+        height: 30px;
+    }
+
+    #settingsSaveBtn {
+        position: fixed;
+        left: 470px;
+        cursor: pointer;
+        background-color: white;
+        top:580px;
+        border: none;
+        border-radius: 10px;
+        height: auto;
+        width: 48px;
+        height: 40px;
+    }
+    #settingsSaveImg {
+        height: 30px;
+        position: fixed;
+        left: 477px;
+        top: 585px;
+    }
+    #billingSaveBtn {
+        position: fixed;
+        left: 770px;
+        top:630px;
+        border: none;
+        border: none;
+        height: auto;
+        width: 48px;
+        border-radius: 8px;
+        background-color: white;
+        height: 40px;
+    }
+    
+    #billingSaveImg {
+        height: 30px;
+        position: fixed;
+        left: 777px;
+        top: 635px;
+    }
+
+    /* body {
+        padding: 0px;
+        margin: 0px; 
+    } */
+
+    #title-bar {
+        -webkit-app-region: drag;
+        height: 40px; 
+        width: 94%;
+        background-color: black;
+        padding: none;
+        margin: 0px; 
+    }
+
+    #title {
+        position: fixed;
+        top: 0px;
+        left: 6px; 
+    }
+
+    #title-bar-btns {
+        -webkit-app-region: no-drag;
+        position: fixed;
+        top: 0px;
+        right: 6px;
+    }
+
+    #close-btn {
+        border: none;
+        outline: none;
+        background-color: black;
+        position: fixed;
+        left: 1250px;
+        top: -5px;
+        width: 32px;
+        height: 32px;
+        -webkit-app-region: no-drag;
+    }
+
+    #close-btn:hover {
+        cursor: pointer;
+    }
+
+    #close {
+        width: 32px;
+        height: 32px;
+        position: fixed;
+        left: 1250px;
+        top: top: -5px;px;
+    }
+    #min-btn {
+        border: none;
+        outline: none;
+        background-color: black;
+        position: fixed;
+        left: 1190px;
+        top: -1px;
+        -webkit-app-region: no-drag;
+    }
+
+    #min-btn:hover {
+        cursor: pointer;
+    }
+    #minimize {
+        width: 45px;
+        height: 54px;
+        position: fixed;
+        top: 0px;
+        left: 1190px;
+    }
+
+    .confirm-btn {
+        background-color: black;
+        width: 75px;
+        height: 35px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+
+    </style>
+<html style="">
+    <head>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">     
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+            <link rel="stylesheet" href="style.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+            
+    </head>
+    <body onload="loadInfo()" > 
+        <div id="title-bar"></div>
+        <button id="min-btn" onclick="minimizeApp()"><img id="minimize" src="imagefiles/minimize.png"></img></button>
+        <button id="close-btn" onclick="closeApp()"><img id="close" src="imagefiles/close.png"></img></button>
+        
+
+    <script src="save.js"></script>    
+    <h1 id="proxies">proxies</h1>
+    <img src='imagefiles/cloud.svg', id="proxiesimg"></img>
+
+   <div class="proxysave"> 
+       <textarea id="proxyinput" class="proxyinput" style="resize: none;">IP:PORT:USER:PASS or IP:PORT:USER:PASS</textarea>       
+   </div>
+   <button class="button" id="proxySaveBtn" onclick="saveProxies()"><img id="proxySaveImg"src="imagefiles/save.svg"></img></button>
+
+   <h1 id="settings">settings</h1>
+   <img src="imagefiles/board.svg" id="settingsimg"></img>
+   
+   <!--
+   <h3 id="proxiesH3">proxies</h3-->
+    
+    
+
+    <span class="checkmark">
+        <label class="container" for="enableproxy" id="enableproxyLabel">
+            <!-- <input id="enableproxy" type="checkbox"></input> -->
+            <div class="pretty p-default p-curve p-thick p-smooth">
+                    <input type="checkbox" id="enableproxy"/>
+                    <div class="state p-default-o">
+                        <label>proxies</label>
+                    </div>
+                </div>
+        </label>
+        <label class="container" for="enablerandomname" id="enablerandomnameLabel">
+                <!-- <input id="enableproxy" type="checkbox"></input> -->
+                <div class="pretty p-default p-curve p-thick p-smooth">
+                        <input type="checkbox" id="enablerandomname"/>
+                        <div class="state p-default-o">
+                            <label>random name?</label>
+                        </div>
+                    </div>
+            </label>
+            <label class="container" for="enablejigaddy" id="enablejigaddyLabel">
+                    <!-- <input id="enableproxy" type="checkbox"></input> -->
+                    <div class="pretty p-default p-curve p-thick p-smooth">
+                            <input type="checkbox" id="enablejigaddy"/>
+                            <div class="state p-default-o">
+                                <label>jig addy?</label>
+                            </div>
+                        </div>
+                </label>
+       
+    </span>
+    
+    
+
+    <!-- <input id="enablerandomname", type="checkbox"></input>
+    <label id="enablerandomnameLabel">random name?</label>
+    
+    <input id="enablejigaddy", type="checkbox"></input>
+    <label id="enablejigaddyLabel">jig addy?</label> -->
+    
+   
+    <form>
+        <label>
+            <input id="key" type="text", placeholder="License Key"></input>
+        </label>
+        <label>
+            <input id="email" type="text", placeholder="Email"></input>
+        </label>
+        <label>
+            <input id="domain" type="text", placeholder="Catchall Domain"></input>
+        </label>
+        <label>
+            <input id="capapi" type="text", placeholder="2Captcha Key"></input>
+        </label>
+        <label>
+            <input id="webhook" type="text", placeholder="Discord Webhook"></input>
+        </label>
+        <label>
+            <input id="size" type="text", placeholder="Size"></input>
+        </label>
+        <label>
+            <input id="delay" type="text", placeholder="Delay"></input>
+        </label>
+        <label>
+            <input id="entry" type="text", placeholder="Entry Amount"></input>
+        </label>
+
+    </form>
+    <button class="button" id="settingsSaveBtn" onclick="saveSettings()"><img id="settingsSaveImg"src="imagefiles/save.svg"></img></button>    
+    <!--input type="image" src='imagefiles/icon.png', id="settingsaveimg" onclick="saveSettings()"></input-->  
+
+    <h1 id="info">info</h1>
+    <img id="infoimg" src="imagefiles/info.svg"></img>
+    <form>
+        <label>
+            <input id="fname", placeholder="First Name"></input>
+        </label>
+        <label>
+            <input id="lname", placeholder="Last Name"></input>
+        </label>
+        <label>
+            <input id="address", placeholder="Address Line 1"></input>
+        </label>
+        <label>
+            <input id="address2", placeholder="Address Line 2"></input>
+        </label>
+        <label>
+            <input id="apt", placeholder="Apartment"></input>
+        </label>
+        <label>
+            <input id="city", placeholder="City"></input>
+        </label>
+        <label>
+            <input id="state", placeholder="State/Province"></input>
+        </label>
+        <label>
+            <input id="country", placeholder="Country"></input>
+        </label>
+        <label>
+            <input id="zipcode", placeholder="Postal Code"></input>
+        </label>
+        <label>
+            <input id="phone", placeholder="Phone Number"></input>
+        </label>
+        <label>
+            <input id="birthday", placeholder="Date Of Birth"></input>
+        </label>
+        <label>
+            <input id="ccnumber", placeholder="Card Number"></input>
+        </label>
+        <label>
+            <input id="ccmonth", placeholder="Expiry Month"></input>
+        </label>
+        <label>
+            <input id="ccyear", placeholder="Expiry Year"></input>
+        </label>
+        <label>
+            <input id="cvv", placeholder="CVV"></input>
+        </label>
+
+       <!-- // add save billing button -> saveBilling() -->
+    </form>
+    <button class="button" id="billingSaveBtn" onclick="saveBilling()"><img id="billingSaveImg"src="imagefiles/save.svg"></img></button>
+  
+    <button class="button" id="faq" onclick="visitFaq()">visit FAQ//Guide</button>
+    <img src="imagefiles/clilogo.png" id="logo"></image>
+
+    
+    <button class="button" id="dependencies", onclick="downloadDependencies()">install dependencies</button>
+    <button class="button" id="saveAll", onclick="saveAllSettings()">save all settings</button>
+    <button class="button" id="run", onclick="runPyc()">run current PYC</button>
+    <button class="button" disabled id="download", onclick="downloadUpdate()">download latest PYC</button>
+    <!--button class="button" id="loadInfo", onclick="loadInfo()">load current info</button-->
+    <h4 id="version">CLI Raffles | v. 2.0.0</h4>
+
+    <input type="hidden" value="2.0" id="currentVersion">
+
+    <div id="savedSettingsModal" class="modal">
+        <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Settings Succesfully Saved!</h2>
+                </div>
+                <div class="modal-body">
+                <p>You can now continue to use the bot!</p>
+                </div>
+            </div>        
+    </div>   
+    <div id="downloadDependenciesModal" class="modal">
+        <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>The dependencies are being downloaded!</h2>
+                </div>
+                <div class="modal-body">
+                <p>You may continue to use the bot while the dependencies download in the background.</p>
+                </div>
+            </div>        
+    </div>   
+    <div id="downloadLatestModal" class="modal">
+        <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>The latest pyc is now being downloaded!</h2>
+                </div>
+                <div class="modal-body">
+                <p>You may continue to use the bot while the pyc downloads in the background.</p>
+                </div>
+            </div>        
+    </div>   
+
+    <!--div class="buttons">
+        <button class="fill">Fill In</button>
+        <button class="pulse">Pulse</button>
+        <button class="close">Close</button>
+        <button class="raise">Raise</button>
+        <button class="up">Fill Up</button>
+        <button class="slide">Slide</button>
+        <button class="offset">Offset</button>
+    </div--> 
+    
+
+    </body>
+</html>

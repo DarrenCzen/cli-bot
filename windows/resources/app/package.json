@@ -1,0 +1,28 @@
+{
+  "name": "cli-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roberto71979/CLI-Bots-GUI.git"
+  },
+  "author": "David & Roberto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Roberto71979/CLI-Bots-GUI/issues"
+  },
+  "homepage": "https://github.com/Roberto71979/CLI-Bots-GUI#readme",
+  "dependencies": {
+    "download-file": "^0.1.5",
+    "electron-reload": "^1.2.5",
+    "node-cmd": "^3.0.0",
+    "opn": "^5.3.0",
+    "pretty-checkbox": "^3.0.3",
+    "python-shell": "^0.5.0",
+    "request": "^2.87.0",
+    "require": "^2.4.20",
+    "save": "^2.3.2",
+    "sweetalert2": "^7.26.7"
+  }
+}
