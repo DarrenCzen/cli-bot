@@ -10,6 +10,10 @@ Run in CMD/Terminal ```python3 enter.py```
 
 For Mac
 
+Download ```https://www.dropbox.com/s/x98imv9ycu2xyrj/CLIBots-2.0-Mac.zip?dl=1```
+
+Unzip it.
+
 Right click the bot -> Show package contents
 
 Copy ```enter.py``` from windows folder.
