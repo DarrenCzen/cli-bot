@@ -4,4 +4,4 @@ Run in CMD/Terminal ```pip3 install uuid datetime lxml bs4 names termcolor pyfig
 
 Run Bot
 
-Run in CMD/Terminal ```python enter.py```
+Run in CMD/Terminal ```python3 enter.py```
